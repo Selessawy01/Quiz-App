@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="stylesheet.css">
+  
+  <title>Frontend Mentor | Frontend quiz app</title>
+</head>
+<body>
+   <header>
+       <div class="subject-list">
+           <div class="icon-wrapper">
+              <img src="./assets/images/icon-css.svg">
+            </div>
+            <p class="subject-title-text"> CSS </p>
+       </div>
+       <div class="toggle-sec">
+          <img class="mode sun" src="./assets/images/icon-sun-dark.svg" alt="" aria-hidden="true">
+          <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+          </label>
+          <img class="mode moon" src="./assets/images/icon-moon-dark.svg" alt="" aria-hidden="true">
+       </div>
+   </header>
+   <main>
+      <section class="quiz-home-page">
+           <div class="homepage-title-sec">
+              <h1>
+                  <span class="normal-text">Welcome to the</span>
+                  <span class="title">Frontend Quiz!</span>
+              </h1>
+              <p><i>Pick a subject to get started.</i></p>
+           </div>
+           <div class="subject-sec">
+              <button type="button"class ="subject-title-btn" id="html" aria-pressed="false">
+                <div class="icon-wrapper" id="html-icon">  
+                   <img  class="icon-img" src="./assets/images/icon-html.svg" alt="HTML">
+                </div>
+                HTML
+              </button>
+
+              <button type="button"class ="subject-title-btn" id="css" aria-pressed="false" >
+                <div class="icon-wrapper" id="css-icon">  
+                   <img  class="icon-img" src="./assets/images/icon-css.svg" alt="Css">
+                </div>
+                CSS
+              </button>
+
+              <button type="button"class ="subject-title-btn" id="javascript" aria-pressed="false" >
+                <div class="icon-wrapper" id="java-icon">  
+                   <img  class="icon-img" src="./assets/images/icon-javascript.svg" alt="javascript">
+                </div>
+                Javascript
+              </button>
+
+              <button type="button"class ="subject-title-btn" id="accessibility" aria-pressed="false" >
+                <div class="icon-wrapper" id="accessibility-icon">  
+                   <img  class="icon-img" src="./assets/images/icon-accessibility.svg" alt="accessibility">
+                </div>
+               Accessibility
+              </button>
+              
+          </div>
+      </section>
+      <section class="quiz-container hidden">
+           <div class="question-container">
+                <div class="question-text">
+                    <p class="question-no"><i>Question 6 of 10</i></p>
+                    <p class="question">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</p>
+
+                </div>
+                <div class="progress-container">
+                           <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+            <div class="answer-container">
+              <button type="button" class="subject-btn"  data-index="0" id="a-btn" aria-pressed="false" tabindex="0">
+                  <div class="option-icon">A</div>
+                   <span class="option-text"></span>
+
+                  <img class="validate-img correct-img" src="./assets/images/icon-correct.svg" alt="">
+                  <img  class="validate-img error-img"  src="./assets/images/icon-error.svg" alt="">
+              </button>
+
+              <button type="button" class="subject-btn"  data-index="1" id="b-btn" aria-pressed="false" tabindex="0">
+                  <div class="option-icon">B</div>
+                   <span class="option-text"></span>
+                   <img class="validate-img correct-img" src="./assets/images/icon-correct.svg" alt="">
+                  <img  class="validate-img error-img"  src="./assets/images/icon-error.svg" alt="">
+              </button>
+             
+              <button type="button" class="subject-btn"  data-index="2" id="c-btn" aria-pressed="false" tabindex="0">
+                  <div class="option-icon">C</div>
+                  <span class="option-text"></span>
+                  <img class="validate-img correct-img" src="./assets/images/icon-correct.svg" alt="">
+                  <img  class="validate-img error-img"  src="./assets/images/icon-error.svg" alt="">
+              </button>
+
+              <button type="button" class="subject-btn"   data-index="3" id="d-btn" aria-pressed="false" tabindex="0">
+                  <div class="option-icon">D</div>
+                   <span class="option-text"></span>
+                   <img class="validate-img correct-img" src="./assets/images/icon-correct.svg" alt="">
+                  <img  class="validate-img error-img"  src="./assets/images/icon-error.svg" alt="">
+              </button>
+              <button type="button" id="submit-btn" class="btn">
+                     Submit Answer
+              </button>
+              <div class="error-mesg">
+                 <img id="error-img" src="./assets/images/icon-error.svg" alt="error-img">
+                 <p> Please select an answer </p>
+              </div>
+
+           </div>
+      </section>
+      <section class="score-container hidden">
+           <div class="score-header">
+               <p class="score-title">Quiz Completed</p>
+               <p class="score-subtitle">You Scored ...</p>
+           </div>
+
+          <div class="score-subject">
+             <div class="subject-score-item">
+                 <div class="score-subject-list">
+                      <div class="icon-wrapper">
+                              <img>
+                      </div>
+                     <p class="subject-title-text-score"></p>
+                  </div>
+                  <div class="score-ctn">
+                      <p class="score">8</p>
+                      <p class="total-score">out of 10</p>
+                  </div>
+             </div>
+             <button type="button" class="btn" id="ply-again-btn">Play Again</button>
+           </div>
+      </section>
+
+   </main>
+     <script src="index.js" defer></script>
+</body>
+</html>
